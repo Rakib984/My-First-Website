@@ -313,6 +313,19 @@
             color: #8a2a2a;
         }
 
+        .hp {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
+        button[disabled] {
+            opacity: 0.7;
+            cursor: progress;
+        }
+
         footer {
             margin-top: 40px;
             padding: 24px 0 36px;
@@ -533,7 +546,11 @@
             <div class="wrap">
                 <h2>Contact with me</h2>
                 <div class="panel">
-                    <form id="contact-form" action="#" method="post" novalidate>
+                    <form id="contact-form" action="/api/contact" method="post" novalidate>
+                        <div class="hp" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+                        </div>
                         <div>
                             <label for="name">Enter your name</label>
                             <input type="text" name="name" id="name" placeholder="Your name" autocomplete="name" required>
@@ -566,28 +583,55 @@
         const form = document.getElementById("contact-form");
         const status = document.getElementById("form-status");
 
-        form.addEventListener("submit", function (event) {
+        const submitButton = form.querySelector("button[type=submit]");
+
+        function showError(text) {
+            status.classList.add("error");
+            status.textContent = text;
+        }
+
+        form.addEventListener("submit", async function (event) {
             event.preventDefault();
             status.classList.remove("error");
+            status.textContent = "";
 
             const name = form.name.value.trim();
             const email = form.email.value.trim();
             const message = form.message.value.trim();
 
             if (!name || !email || !message) {
-                status.classList.add("error");
-                status.textContent = "Please fill in your name, email, and message.";
+                showError("Please fill in your name, email, and message.");
                 return;
             }
 
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                status.classList.add("error");
-                status.textContent = "Please enter a valid email address.";
+                showError("Please enter a valid email address.");
                 return;
             }
 
-            status.textContent = "Thanks, " + name + ". Your message is ready — this demo form does not send email yet.";
-            form.reset();
+            submitButton.disabled = true;
+            status.textContent = "Sending…";
+
+            try {
+                const response = await fetch(form.action, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, message, website: form.website.value })
+                });
+                const data = await response.json().catch(() => ({}));
+
+                if (!response.ok || !data.ok) {
+                    showError(data.error || "Sorry, something went wrong. Please try again later.");
+                    return;
+                }
+
+                status.textContent = "Thanks, " + name + ". Your message has been sent.";
+                form.reset();
+            } catch (err) {
+                showError("Could not reach the server. Please check your connection and try again.");
+            } finally {
+                submitButton.disabled = false;
+            }
         });
     </script>
 </body>

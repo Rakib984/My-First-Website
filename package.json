@@ -1,0 +1,18 @@
+{
+  "name": "my-first-website",
+  "version": "1.0.0",
+  "description": "Personal website of Rakib Hasan Bappy with a Node.js backend for the contact form",
+  "main": "server.js",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16"
+  }
+}
