@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal website of Rakib Hasan Bappy — student and aspiring programmer from Dhaka.">
-    <title>Rakib Hasan Bappy | My First Website</title>
+    <meta name="description" content="Personal website of Rakib Hasan Bappy — IT support engineer and Artificial Intelligence student based in Madrid, Spain.">
+    <title>Rakib Hasan Bappy | IT Support &amp; AI Student</title>
     <style>
         :root {
             --green: #415c19;
@@ -163,14 +163,15 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            text-align: center;
+            text-align: left;
             overflow: hidden;
         }
 
         th,
         td {
-            padding: 12px 10px;
+            padding: 12px 16px;
             border-bottom: 1px solid var(--line);
+            vertical-align: top;
         }
 
         th {
@@ -184,6 +185,57 @@
 
         tbody tr:last-child td {
             border-bottom: none;
+        }
+
+        .contact-list {
+            list-style: none;
+            display: grid;
+            gap: 6px;
+            margin-top: 14px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 0.92rem;
+        }
+
+        .contact-list a {
+            text-decoration: none;
+        }
+
+        .contact-list a:hover,
+        .contact-list a:focus-visible {
+            text-decoration: underline;
+        }
+
+        .timeline {
+            list-style: none;
+            display: grid;
+            gap: 16px;
+        }
+
+        .timeline li {
+            display: grid;
+            gap: 4px;
+        }
+
+        .timeline h3 {
+            font-size: 1.08rem;
+            color: var(--green-dark);
+        }
+
+        .timeline .meta {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+
+        .timeline li + li {
+            padding-top: 16px;
+            border-top: 1px solid var(--line);
+        }
+
+        .timeline ul {
+            margin-top: 6px;
+            padding-left: 20px;
+            color: var(--muted);
         }
 
         .interests {
@@ -301,7 +353,9 @@
             <nav aria-label="Primary">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
+                <a href="#experience">Experience</a>
                 <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -314,7 +368,7 @@
                     <div class="avatar" aria-hidden="true">RH</div>
                     <div>
                         <h1>Hi, I'm Rakib Hasan Bappy</h1>
-                        <p class="lede">Aspiring programmer from Dhaka, building my first website and working toward a career in software.</p>
+                        <p class="lede">Freelance IT Support Engineer and Artificial Intelligence student based in Madrid, Spain.</p>
                     </div>
                 </div>
             </div>
@@ -322,42 +376,113 @@
 
         <section id="about">
             <div class="wrap">
-                <h2>Let’s know about me</h2>
+                <h2>About me</h2>
                 <div class="panel">
                     <p>
-                        Hello, I’m Rakib Hasan Bappy from Dhaka. I passed HSC in 2020.
-                        I want to be a programmer — it’s my dream. So I enrolled in an Interactive Cares course.
-                        I am trying my best to reach my goal.
+                        I’m a versatile, reliable professional with a multidisciplinary background spanning IT support,
+                        hospitality, administrative and document management, and community assistance work.
+                        I adapt quickly across technical, customer-facing, and office environments, with strong
+                        multilingual communication and a consistent record of accuracy, follow-through, and dependability.
                     </p>
+                    <p style="margin-top: 12px;">
+                        I’m currently completing a Bachelor’s degree in Artificial Intelligence, following a
+                        Data Science exchange program in Spain.
+                    </p>
+                    <ul class="contact-list">
+                        <li>Madrid, Spain</li>
+                        <li><a href="mailto:rakibhasanbappy321@gmail.com">rakibhasanbappy321@gmail.com</a></li>
+                        <li><a href="tel:+34610914510">+34 610 914 510</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="wrap">
+                <h2>Work experience</h2>
+                <div class="panel">
+                    <ol class="timeline">
+                        <li>
+                            <h3>Freelance IT Support Engineer</h3>
+                            <p class="meta">Madrid, Spain · January 2026 – Present</p>
+                            <ul>
+                                <li>End user device support: setup, configuration, and troubleshooting of laptops, desktops, printers, and mobile phones for individuals and small businesses.</li>
+                                <li>On-site remote-hands assistance, including installation and deinstallation of server racks and data center equipment.</li>
+                                <li>Diagnose and resolve network and operating system issues, restoring service quickly for end users.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Customer Service &amp; Operations Specialist</h3>
+                            <p class="meta">Locutorio, Madrid, Spain · January 2026 – July 2026</p>
+                            <ul>
+                                <li>Oversaw public-use computer stations, independently identifying and resolving technical faults.</li>
+                                <li>Completed over 40 independent support tasks, logging each accurately and maintaining a steady workflow.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Hospitality &amp; Customer Service Staff</h3>
+                            <p class="meta">Agra Palace, Madrid, Spain · February 2026 – June 2026</p>
+                            <ul>
+                                <li>Prepared ingredients, plated dishes, and kept the kitchen clean and organized in a high-volume setting.</li>
+                                <li>Assisted a diverse clientele using multilingual communication skills.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Technical Support &amp; HR Intern</h3>
+                            <p class="meta">Al Tizara Ltd., Bangladesh · April 2025 – September 2025</p>
+                            <ul>
+                                <li>Carried out functional checks on systems and equipment, following structured protocols under senior team guidance.</li>
+                                <li>Supported HR tasks, including personnel documentation and coordination of internal processes.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Admissions Coordinator &amp; Advisor (Internship)</h3>
+                            <p class="meta">Explore EDU, Shanghai · October 2023 – September 2025</p>
+                            <ul>
+                                <li>Managed and processed admission applications for hundreds of international students, coordinating with international teams.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Community Administrative &amp; Legal Assistance (Volunteer)</h3>
+                            <p class="meta">Madrid, Spain · Ongoing</p>
+                            <ul>
+                                <li>Guided migrants through criminal record certificate applications, regularization processes, Social Security number requests, and digital ID registration.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Freelance Kitchen &amp; Event Support</h3>
+                            <p class="meta">Madrid, Spain, and Bangladesh · Ongoing, alongside other roles</p>
+                            <ul>
+                                <li>Supported catering teams at weddings, family gatherings, and community events under tight timeframes.</li>
+                            </ul>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </section>
 
         <section id="education">
             <div class="wrap">
-                <h2>Education qualification</h2>
+                <h2>Education</h2>
                 <div class="panel" style="padding: 0; overflow-x: auto;">
                     <table>
                         <thead>
                             <tr>
-                                <th>Exam name</th>
-                                <th>Group name</th>
-                                <th>Passing year</th>
-                                <th>Result</th>
+                                <th>Degree</th>
+                                <th>Institution</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>SSC</td>
-                                <td>Science</td>
-                                <td>2018</td>
-                                <td>GPA: 5.00</td>
+                                <td>Bachelor's Degree in Artificial Intelligence</td>
+                                <td>Shanghai University of Engineering Science (SUES), China</td>
+                                <td>In progress</td>
                             </tr>
                             <tr>
-                                <td>HSC</td>
-                                <td>Science</td>
-                                <td>2020</td>
-                                <td>GPA: 5.00</td>
+                                <td>Exchange Program – Data Science</td>
+                                <td>Universitat Politècnica de València (UPV), Spain</td>
+                                <td>Exchange student</td>
                             </tr>
                         </tbody>
                     </table>
@@ -365,14 +490,32 @@
             </div>
         </section>
 
-        <section id="interests">
+        <section id="skills">
             <div class="wrap">
-                <h2>Interests</h2>
+                <h2>Core skills</h2>
                 <ul class="interests">
-                    <li>Traveling</li>
-                    <li>Gadgets</li>
-                    <li>Reading books</li>
-                    <li>Programming</li>
+                    <li>IT &amp; End User Device Support</li>
+                    <li>Network &amp; OS Troubleshooting</li>
+                    <li>Remote Hands / Data Center Equipment</li>
+                    <li>Customer Service &amp; Hospitality</li>
+                    <li>Administrative &amp; Document Management</li>
+                    <li>Recruitment &amp; HR Support</li>
+                    <li>Community Legal/Administrative Assistance</li>
+                    <li>Multilingual Communication</li>
+                    <li>Organization &amp; Time Management</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="languages">
+            <div class="wrap">
+                <h2>Languages</h2>
+                <ul class="interests">
+                    <li>Bengali — Native</li>
+                    <li>English — Fluent</li>
+                    <li>Hindi — Good</li>
+                    <li>Spanish — Basic (A2)</li>
+                    <li>Chinese — Basic</li>
                 </ul>
             </div>
         </section>
